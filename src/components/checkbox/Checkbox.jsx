@@ -1,18 +1,17 @@
-function Checkbox({ todoItem, handleChangeCheckbox }) {
+function Checkbox({ id, done, content, onToggleDone }) {
   function handleChangeCheckboxEvent(e) {
-    const updatedTodoItem = { ...todoItem };
-    updatedTodoItem.done = e.target.checked;
-    handleChangeCheckbox(updatedTodoItem);
+    onToggleDone({ id, done: e.target.checked, content });
   }
+
   return (
     <div>
       <input
-        id={todoItem.id}
+        id={id}
         type="checkbox"
-        checked={todoItem.done}
+        checked={done}
         onChange={handleChangeCheckboxEvent}
       />
-      <label htmlFor={todoItem.id}>{todoItem.content}</label>
+      <label htmlFor={String(id)}>{content}</label>
     </div>
   );
 }

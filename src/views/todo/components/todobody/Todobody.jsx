@@ -1,13 +1,31 @@
 import Todoitem from "../todoitem/Todoitem";
 
-function Todobody({ todos, handleChangeCheckbox, onClick }) {
+function Todobody({ todos, setTodos }) {
+  function onToggleDone(todoItem) {
+    const updatedTodos = todos.map((todo) => {
+      return todo.id === todoItem.id ? todoItem : todo;
+    });
+    setTodos(updatedTodos);
+  }
+
+  function handleDeleteBtn(e) {
+    const currentId = Number(e.target.dataset.id);
+    const oldTodos = [...todos];
+    console.log(oldTodos);
+    const newTodos = oldTodos.filter((todo) => {
+      return currentId !== todo.id;
+    });
+    setTodos(newTodos);
+  }
+
   return (
     <div>
       {todos.map((todo) => (
         <Todoitem
-          todos={todo}
-          handleChangeCheckbox={handleChangeCheckbox}
-          onClick={onClick}
+          key={todo.id}
+          todo={todo}
+          onToggleDone={onToggleDone}
+          onClick={handleDeleteBtn}
         />
       ))}
     </div>
