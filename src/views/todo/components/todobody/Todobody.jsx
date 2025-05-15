@@ -21,14 +21,18 @@ function Todobody({ todos, setTodos }) {
 
   return (
     <div className="todo-items">
-      {todos.map((todo) => (
-        <Todoitem
-          key={todo.id}
-          todo={todo}
-          onToggleDone={onToggleDone}
-          onClick={handleDeleteBtn}
-        />
-      ))}
+      {todos.length === 0 ? (
+        <div className="todo-items__no-entry">Noch keine Todos eingetragen</div>
+      ) : (
+        todos.map((todo) => (
+          <Todoitem
+            key={todo.id}
+            todo={todo}
+            onToggleDone={onToggleDone}
+            onClick={handleDeleteBtn}
+          />
+        ))
+      )}
     </div>
   );
 }
