@@ -1,4 +1,5 @@
 import Todoitem from "../todoitem/Todoitem";
+import "./Todobody.scss";
 
 function Todobody({ todos, setTodos }) {
   function onToggleDone(todoItem) {
@@ -19,7 +20,7 @@ function Todobody({ todos, setTodos }) {
   }
 
   return (
-    <div>
+    <div className="todo-items">
       {todos.map((todo) => (
         <Todoitem
           key={todo.id}

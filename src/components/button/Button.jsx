@@ -1,7 +1,9 @@
+import "./Button.scss";
+
 function Button({ buttonValue, onClick, id }) {
   const btnId = id ? id : "";
   return (
-    <button onClick={onClick} data-id={btnId}>
+    <button className="button" onClick={onClick} data-id={btnId}>
       {buttonValue}
     </button>
   );

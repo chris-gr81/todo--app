@@ -1,4 +1,4 @@
-import "./App.css";
+import "./styles/main.scss";
 import Todo from "./views/todo/Todo";
 
 function App() {

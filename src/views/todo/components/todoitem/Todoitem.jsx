@@ -1,10 +1,11 @@
 import Button from "../../../../components/button/Button";
 import Checkbox from "../../../../components/checkbox/Checkbox";
+import "./Todoitem.scss";
 
 function Todoitem({ todo, onToggleDone, onClick }) {
   const { id, done, content } = todo;
   return (
-    <div>
+    <div className="todo-items__item">
       <Checkbox
         id={id}
         done={done}

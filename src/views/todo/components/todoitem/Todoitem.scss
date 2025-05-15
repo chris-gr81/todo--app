@@ -1,0 +1,17 @@
+@import "../../../../styles/variables";
+
+.todo-items__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: $color-box;
+  color: $color-text;
+  padding: 0.75rem, 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.75rem;
+  box-sizing: border-box;
+  gap: 1rem;
+  padding: 0.5rem;
+}

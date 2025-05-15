@@ -1,0 +1,9 @@
+@import "../../styles/variables";
+
+.todo {
+  display: flex;
+  justify-content: center;
+  background-color: $color-bg;
+  height: 100vh;
+  width: 100vw;
+}
